@@ -40,6 +40,7 @@ CORS_ALLOWED_ORIGINS = ["*"]
 
 ALLOWED_HOSTS = ["*"]
 
+STATIC_URL = 'static/'
 
 # Application definition
 
