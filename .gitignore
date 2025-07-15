@@ -1,0 +1,36 @@
+# Django specific
+/server/*.log
+/server/*.pot
+/server/*.pyc
+/server/__pycache__/
+/server/local_settings.py
+/server/db.sqlite3
+/server/media/
+
+# Virtual environment
+/server/venv/
+/server/.env/
+/server/.env*  # Catches all .env files
+
+# IDE
+/server/.idea/
+/server/.vscode/
+/server/*.swp
+/server/*.swo
+
+# OS generated
+/server/.DS_Store
+/server/.DS_Store?
+/server/._*
+/server/.Spotlight-V100
+/server/.Trashes
+/server/ehthumbs.db
+/server/Thumbs.db
+
+# Database migrations (except initial)
+/server/*/migrations/*.py
+!/server/*/migrations/__init__.py
+
+# Python cache
+/server/*.egg-info/
+/server/.pytest_cache/
