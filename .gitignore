@@ -10,7 +10,8 @@
 # Virtual environment
 /server/venv/
 /server/.env/
-/server/.env*  # Catches all .env files
+/server/.env*  # Catches all .env 
+/server/*.env
 
 # IDE
 /server/.idea/
