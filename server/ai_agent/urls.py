@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ai_agent_backend import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('travel/generate-trip-plan/', views.generate_trip_plan, name='Generate-Trip-Plan'),
 ]
