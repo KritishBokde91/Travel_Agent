@@ -179,7 +179,7 @@ def generate_trip_plan(request):
     try:
         data = json.loads(request.body)
         
-        # Validation (same as before)
+        # Validation
         required_fields = ['location', 'number_of_people', 'budget_per_person', 'duration_days']
         for field in required_fields:
             if field not in data:
@@ -190,7 +190,13 @@ def generate_trip_plan(request):
         budget_per_person = float(data['budget_per_person'])
         duration_days = int(data['duration_days'])
         
-        # Input validation (same as before)
+        # Input validation
+        if number_of_people <= 0:
+            return JsonResponse({'error': 'Number of people must be positive'}, status=400)
+        if budget_per_person <= 0:
+            return JsonResponse({'error': 'Budget must be positive'}, status=400)
+        if duration_days <= 0:
+            return JsonResponse({'error': 'Duration must be positive'}, status=400)
         
         # Generate trip plans
         ai_agent = AITravelAgent()
@@ -215,6 +221,9 @@ def generate_trip_plan(request):
             'data': trip_plans
         })
         
+    except json.JSONDecodeError:
+        logger.error("Invalid JSON received")
+        return JsonResponse({'error': 'Invalid JSON format'}, status=400)
     except Exception as e:
         logger.error(f"Error: {str(e)}")
         return JsonResponse({'error': str(e)}, status=400)

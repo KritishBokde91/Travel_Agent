@@ -40,6 +40,7 @@ CORS_ALLOWED_ORIGINS = [
 
 ALLOWED_HOSTS = ["*"]
 
+APPEND_SLASH = False
 # Application definition
 
 INSTALLED_APPS = [

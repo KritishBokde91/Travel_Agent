@@ -2,3 +2,5 @@ django
 django-cors-headers
 google-generativeai
 whitenoise
+python-dotenv
+djangorestframework
